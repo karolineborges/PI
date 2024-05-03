@@ -255,6 +255,7 @@ body{
     width: 70vw;
     margin-top: 2vw;
     transform: translate(30.4%, 20%);
+    z-index: 0;
 }
 
 .mini-cards p {

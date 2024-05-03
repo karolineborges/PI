@@ -3,9 +3,9 @@ import React, {useState} from 'react';
 import '../App.css';
 import Images from '../components/Images.js';
 import Controls from '../components/Controls.js';
-import Modal from '../components/Modal.js';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import ModalVisit from '../components/ModalVisit.js';
 import AddPet from "../components/AddPet.js";
+import Dialog from "../components/Dialog.js";
 
 
 function Adoption() {
@@ -43,19 +43,12 @@ function Adoption() {
                     <div className="pets-description">
                        <div>Mia</div> 
                     </div>
-                    <Modal closeModal={closeModal} />
+                    <ModalVisit closeModal={closeModal} />
                 </div>
-                <Dialog open={open} onClose={handleCloseModal}>
-                    <DialogTitle style={{ backgroundColor: "#adf0b6", color: "#7B3F00", fontWeight: "bold" }}> Sugestão de Pet </DialogTitle >
-                    <DialogContent style={{ marginTop: "1vw" }}>
-                        <AddPet IsSugestion={true}/>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleCloseModal} className='buttonClose'>
-                            Fechar
-                        </Button>
-                    </DialogActions>
+                <Dialog>
+                    <AddPet IsSugestion={true} />
                 </Dialog>
+
                 <div className="mini-cards">
                     <p>Conhece algum animalzinho que esteja aprecisando de abrigo temporário? Faça o cadastro dele <span onClick={handleOpenModal}>AQUI!</span></p>
                 </div>

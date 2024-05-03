@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import EditDeletPet from "./EditDeletePet.js";
 import AddPet from "./AddPet.js";
 
@@ -43,17 +42,9 @@ function ModalAction({index}) {
                 </g>
 
             </svg>   
-            <Dialog open={open} onClose={handleCloseModal}>
-                <DialogTitle style={{ backgroundColor: "#adf0b6", color: "#7B3F00", fontWeight: "bold" }}> Edição </DialogTitle >
-                    <DialogContent style={{ marginTop: "1vw" }}>
+
                     {form === "add" ? <AddPet /> : form === "editPet" ? <EditDeletPet index={index} form={form} /> : <EditDeletPet index={index} form={form} />}                        
-                    </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleCloseModal} className='buttonClose'>
-                        Fechar
-                    </Button>
-                </DialogActions>
-            </Dialog>
+
         </div>
     );
 }

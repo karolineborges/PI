@@ -21,10 +21,7 @@
 .adm button {
     width: 25vw;
     height: 2vw;
-    background-color: #adf0b6;
-    border: transparent;
-    border-radius: 4rem;
-    font-style: none;
+    padding: 1vw 0 3vw 0;
     color: #7B3F00;
 }
 

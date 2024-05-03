@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/Administration.css"
 import ModalAction from "../components/ModalAction.js";
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import Button from '../components/Button.js';
 import AddPet from "../components/AddPet.js";
 import { addSugestion, removeSugestion } from "../db.js"
 
@@ -58,27 +58,18 @@ function Administration(){
         <div className="adm">
             <h1>Ações de Administrador</h1>
             <div style={{ display: "flex" }}>
-                <Button onClick={handleList} className='buttonClose' style={{ margin: "1vw 6.3vw 0 0", width: "15vw" }}>
+                <Button onClick={handleClick} className='buttonClose' style={{ margin: "1vw 6.3vw 0 0", width: "15vw" }}>
                     Listar pets
                 </Button>
-                <Button onClick={handleOpenModal} className='buttonClose' style={{ margin: "1vw 6.3vw 0 0", width: "15vw" }}>
+                <Button onClick={handleClick} className='buttonClose' style={{ margin: "1vw 6.3vw 0 0", width: "15vw" }}>
                     Adicionar novo pet
                 </Button>
                 <Button id="sugestion" onClick={handleClick} className='buttonClose' style={{ margin: "1vw 0 0 0", width: "15vw" }}>
                     Verificar sugestões
                 </Button>
+
             </div>
-            <Dialog open={open} onClose={handleCloseModal}>
-                <DialogTitle style={{ backgroundColor: "#adf0b6", color: "#7B3F00", fontWeight: "bold" }}> Edição </DialogTitle >
-                <DialogContent style={{ marginTop: "1vw" }}>
-                    <AddPet i /> 
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleCloseModal} className='buttonClose'>
-                        Fechar
-                    </Button>
-                </DialogActions>
-            </Dialog>
+                <AddPet  /> 
             <section className="actions">
                 <table className="petList">
                     <thead>

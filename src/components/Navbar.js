@@ -2,7 +2,6 @@ import { useState } from 'react';
 import '../styles/Navbar.css';
 import logo from "../images/img.png";
 import {Link} from "react-router-dom";
-import ListMenu from './SVG';
 
 function Navbar() {
     const [page, setPage] = useState('home');
@@ -19,8 +18,9 @@ function Navbar() {
                   <img src={logo} />
             </div>
             <div className="menu" onClick={handleShowMenu}>
-                <ListMenu></ListMenu>
-            </div>
+                <svg width="10%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>            </div>
             <div className={`navbar-links  ${showMenu && 'active'}`}>
             <ul>
                 <li className={page === 'home' ? 'active' : ''}>

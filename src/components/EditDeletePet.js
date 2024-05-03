@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import Button from '../components/Button.js';
 import React, { useState } from 'react';
 import { editPet, deletePet } from "../db"
 
